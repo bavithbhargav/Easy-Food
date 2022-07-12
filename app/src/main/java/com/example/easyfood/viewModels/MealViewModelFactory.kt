@@ -1,0 +1,11 @@
+package com.example.easyfood.viewModels
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.example.easyfood.db.MealDatabase
+
+class MealViewModelFactory(val mealDatabase: MealDatabase) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return MealViewModel(mealDatabase) as T
+    }
+}
